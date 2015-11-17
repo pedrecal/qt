@@ -15,10 +15,12 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     qcustomplot.cpp \
-    loadimg.cpp
+    loadimg.cpp \
+    bright.cpp
 
 HEADERS  += mainwindow.h \
     qcustomplot.h \
-    loadimg.h
+    loadimg.h \
+    bright.h
 
 FORMS    += mainwindow.ui

@@ -6,31 +6,31 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>985</width>
-    <height>476</height>
+    <width>1153</width>
+    <height>586</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QCustomPlot" name="widget" native="true">
+   <widget class="QCustomPlot" name="customPlot" native="true">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>10</y>
-      <width>501</width>
-      <height>361</height>
+      <x>530</x>
+      <y>100</y>
+      <width>601</width>
+      <height>411</height>
      </rect>
     </property>
    </widget>
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>180</y>
-      <width>231</width>
-      <height>181</height>
+      <x>10</x>
+      <y>100</y>
+      <width>511</width>
+      <height>371</height>
      </rect>
     </property>
     <property name="widgetResizable">
@@ -41,8 +41,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>229</width>
-       <height>179</height>
+       <width>509</width>
+       <height>369</height>
       </rect>
      </property>
     </widget>
@@ -50,8 +50,8 @@
    <widget class="QPushButton" name="LoadButton">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>20</y>
+      <x>10</x>
+      <y>60</y>
       <width>98</width>
       <height>33</height>
      </rect>
@@ -60,13 +60,64 @@
      <string>Load Image</string>
     </property>
    </widget>
+   <widget class="QSlider" name="slider">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>480</y>
+      <width>501</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-200</number>
+    </property>
+    <property name="maximum">
+     <number>200</number>
+    </property>
+    <property name="singleStep">
+     <number>10</number>
+    </property>
+    <property name="pageStep">
+     <number>30</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="histBt">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>60</y>
+      <width>151</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Generate Histogram</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="eqBt">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>60</y>
+      <width>98</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Equalize</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>985</width>
+     <width>1153</width>
      <height>27</height>
     </rect>
    </property>

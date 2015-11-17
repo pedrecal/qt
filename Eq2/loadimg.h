@@ -12,13 +12,16 @@ class LoadImg : public QWidget
 public:
     explicit LoadImg(QWidget *parent = 0);
     ~LoadImg(); //Destructor
-    QLabel *Img; //Ponteiro para QLabel, Local onde mostra Imagem
-    bool isImage; //Variavel pra checar LoadImage
 
+    QLabel *Img; //Ponteiro para QLabel, Local onde mostra Imagem
+    QImage lImg;
+    QImage oImg;
+    bool isImage; //Variavel pra checar LoadImage
+    long sizeImg;
 signals:
 
 public slots:
-    void Load (); //Declaração do Slot(Envia/Resposta do Signal) (Signal Recebe)
+    void Load(); //Declaração do Slot(Envia/Resposta do Signal) (Signal Recebe)
 };
 
 #endif // LOADIMG_H

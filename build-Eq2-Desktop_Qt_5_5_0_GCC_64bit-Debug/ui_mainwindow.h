@@ -18,6 +18,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -29,10 +30,13 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QCustomPlot *widget;
+    QCustomPlot *customPlot;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QPushButton *LoadButton;
+    QSlider *slider;
+    QPushButton *histBt;
+    QPushButton *eqBt;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -41,27 +45,41 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(985, 476);
+        MainWindow->resize(1153, 586);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        widget = new QCustomPlot(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(460, 10, 501, 361));
+        customPlot = new QCustomPlot(centralWidget);
+        customPlot->setObjectName(QStringLiteral("customPlot"));
+        customPlot->setGeometry(QRect(530, 100, 601, 411));
         scrollArea = new QScrollArea(centralWidget);
         scrollArea->setObjectName(QStringLiteral("scrollArea"));
-        scrollArea->setGeometry(QRect(90, 180, 231, 181));
+        scrollArea->setGeometry(QRect(10, 100, 511, 371));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 229, 179));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 509, 369));
         scrollArea->setWidget(scrollAreaWidgetContents);
         LoadButton = new QPushButton(centralWidget);
         LoadButton->setObjectName(QStringLiteral("LoadButton"));
-        LoadButton->setGeometry(QRect(20, 20, 98, 33));
+        LoadButton->setGeometry(QRect(10, 60, 98, 33));
+        slider = new QSlider(centralWidget);
+        slider->setObjectName(QStringLiteral("slider"));
+        slider->setGeometry(QRect(10, 480, 501, 17));
+        slider->setMinimum(-200);
+        slider->setMaximum(200);
+        slider->setSingleStep(10);
+        slider->setPageStep(30);
+        slider->setOrientation(Qt::Horizontal);
+        histBt = new QPushButton(centralWidget);
+        histBt->setObjectName(QStringLiteral("histBt"));
+        histBt->setGeometry(QRect(140, 60, 151, 33));
+        eqBt = new QPushButton(centralWidget);
+        eqBt->setObjectName(QStringLiteral("eqBt"));
+        eqBt->setGeometry(QRect(370, 60, 98, 33));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 985, 27));
+        menuBar->setGeometry(QRect(0, 0, 1153, 27));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -79,6 +97,8 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         LoadButton->setText(QApplication::translate("MainWindow", "Load Image", 0));
+        histBt->setText(QApplication::translate("MainWindow", "Generate Histogram", 0));
+        eqBt->setText(QApplication::translate("MainWindow", "Equalize", 0));
     } // retranslateUi
 
 };
